@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<BooksDbContext>(options => options.UseInMemoryDatabase("LibraryDb"));
+builder.Services.AddDbContext<UsersDbContext>(options => options.UseInMemoryDatabase("LibraryDb"));
 
 var app = builder.Build();
 
