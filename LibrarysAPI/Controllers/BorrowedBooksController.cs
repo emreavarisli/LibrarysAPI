@@ -1,5 +1,6 @@
 ﻿using LibrarysAPI.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibrarysAPI.Controllers
 {
@@ -13,9 +14,10 @@ namespace LibrarysAPI.Controllers
             this.dbContext = dbContext;
         }
 
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> GetBooks()
         {
-            return View();
+            return Ok(await dbContext.BorrowedBooks.ToListAsync());
         }
     }
 }
