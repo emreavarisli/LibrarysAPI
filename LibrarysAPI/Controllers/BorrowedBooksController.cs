@@ -7,7 +7,7 @@ namespace LibrarysAPI.Controllers
     [Route("api/[controller]")]
     public class BorrowedBooksController : Controller
     {
-        private readonly BorrowedBooksController dbContext;
+        private readonly BorrowedBooksDbContext dbContext;
         public BorrowedBooksController(BorrowedBooksDbContext dbContext)
         {
             this.dbContext = dbContext;
